@@ -1,12 +1,12 @@
 import React from "react";
 import HouseALevel2 from './HouseALevel2'
 
-export default function HouseALevel1({passFromGrandParent}) {
-  const handlePassFromParent = (value) => {
-    passFromGrandParent(value)
+export default function HouseALevel1({add}) {
+  const handleAdd = (n) => {
+    add(n)
   }
-  return <div style={{width: '60vw', height: '60vh', margin: '2.5rem', background: 'red'}}>
-    <h1>House A - Level 1</h1>
-    <HouseALevel2 passFromParent={handlePassFromParent} />
+  return <div style={{width: '60vw', height: '60vh', background: 'maroon'}}>
+    <h1>House A - 1 Level Deep</h1>
+    <HouseALevel2 add={handleAdd} />
   </div>;
 }

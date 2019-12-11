@@ -7,14 +7,14 @@ import store from "./store";
 
 function App() {
   const [age, setAge] = useState(0)
-  const handlePass = (value) => {
-    setAge(value);
+  const handleAdd = (value) => {
+    setAge(age + value);
   }
   return (
 
     <Provider store={store}>
-      <HouseALevel1 passFromGrandParent={handlePass} />
-      <HouseBLevel1 age={age} />
+      <HouseALevel1 add={handleAdd} />
+      <HouseBLevel1  age={age} />
     </Provider>
   );
 }

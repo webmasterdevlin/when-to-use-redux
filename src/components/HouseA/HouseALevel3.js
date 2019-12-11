@@ -1,13 +1,14 @@
 import React from 'react';
-import {useSelector, useDispatch} from 'react-redux'
-import {updateText} from "../../store/house/house-actions";
+import HouseALevel4 from './HouseALevel4'
 
+export default function HouseALevel3({add}) {
 
-export default function HouseALevel3() {
-  const dispatch = useDispatch();
-  const {text} = useSelector(state => state.houseReducer)
-  return <div style={{width: '15vw', height: '15vh', margin: '2.5rem', background: 'yellow'}}>
-    <h1>House A - Level 3 : {text}</h1>
-    <button onClick={() => dispatch(updateText('Gone!'))}>Banish</button>
+  const handleAdd = (n) => {
+    add(n);
+  };
+
+  return <div style={{width: '40vw', height: '40vh', margin: '2.5rem', background: 'orange'}}>
+    <h1>House A - 3 Level Deep : </h1>
+    <HouseALevel4 add={handleAdd} />
   </div>;
 }
